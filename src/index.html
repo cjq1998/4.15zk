@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+</head>
+
+<body>
+    <script src="libs/flexible.js"></script>
+    <script src='libs/swiper.min.js'></script>
+    <script src='libs/axios.js'></script>
+    <script src='libs/better-scroll.js'></script>
+    <div class="wrapper">
+        <div class="header">
+            <span>NBA</span>
+            <span>NBA</span>
+            <span>NBA</span>
+            <span>NBA</span>
+            <span>NBA</span>
+            <span>NBA</span>
+        </div>
+        <div class="main">
+            <div class="swiper-container">
+                <div class="swiper-wrapper  banner">
+                    <div class="swiper-slide">
+                        <img src="img/1.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="div">
+                <div>
+                    <dl>
+                        <dt><img src="img/1.jpg" alt=""></dt>
+                        <dd>
+                            <span>菜单逼v附近空白</span>
+                            <span>菜单逼v附近空白</span>
+                            <span>菜单逼v附近空白</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt><img src="img/1.jpg" alt=""></dt>
+                        <dd>
+                            <span>菜单逼v附近空白</span>
+                            <span>菜单逼v附近空白</span>
+                            <span>菜单逼v附近空白</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt><img src="img/1.jpg" alt=""></dt>
+                        <dd>
+                            <span>菜单逼v附近空白</span>
+                            <span>菜单逼v附近空白</span>
+                            <span>菜单逼v附近空白</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt><img src="img/1.jpg" alt=""></dt>
+                        <dd>
+                            <span>菜单逼v附近空白</span>
+                            <span>菜单逼v附近空白</span>
+                            <span>菜单逼v附近空白</span>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+
+    <script>
+        const banner = new Swiper(".banner", {
+            autoplay: true,
+            loop: true
+        })
+
+        const bscroll = new BScroll(".main", {
+            click: true
+        })
+
+        axios.get("/getData").then(res => {
+            console.log(res.data)
+            let str = "";
+            res.data.forEach(item => {
+                str += `<dl>
+                        <dt><img src="img/1.jpg" alt=""></dt>
+                        <dd>
+                            <span>${item.tit}</span>
+                           
+                        </dd>
+                    </dl>`
+            })
+        })
+    </script>
+</body>
+
+</html>

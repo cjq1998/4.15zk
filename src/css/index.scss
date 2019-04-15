@@ -1,0 +1,82 @@
+@import "common/common.1.scss";
+@import "common/reset.scss";
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    background: #ccc;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    height: px2rem(44px);
+    background: red;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: px2rem(13px);
+}
+
+.main {
+    width: 100%;
+    flex: 1;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    .banner {
+        width: 100%;
+        // display: flex;
+        height: px2rem(150px);
+        overflow: hidden;
+        // overflow: hidden;
+        .swiper-slide {
+            display: flex;
+            width: 100%;
+            height: px2rem(150px);
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    .div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        dl {
+            width: 100%;
+            display: flex;
+            dt {
+                width: 30%;
+                img {
+                    width: px2rem(100px);
+                    height: px2rem(100px);
+                }
+            }
+            dd {
+                width: 70%;
+                margin-left: px2rem(15px);
+                font-size: px2rem(20px);
+                span {
+                    margin-top: px2rem(5px);
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    width: 100%;
+    height: px2rem(44px);
+    background: #ccc;
+}
